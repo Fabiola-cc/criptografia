@@ -15,5 +15,6 @@ def ascii_key(length):
 
     return key
 
-print("Ejemplo: ")
-print("Llave longitud 3 generada: " + ascii_key(3))
+if __name__ == "__main__":
+    print("Ejemplo: ")
+    print("Llave longitud 3 generada: " + ascii_key(3))
