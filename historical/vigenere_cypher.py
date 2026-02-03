@@ -2,6 +2,17 @@ alfabeto_idx = {chr(i): i - ord('a') for i in range(ord('a'), ord('z') + 1)}
 alfabeto = [chr(i) for i in range(ord('a'), ord('z') + 1)]
 
 def vigenere_cifrar(mensaje, clave):
+    """
+    Cifra un mensaje utilizando el Cifrado Vigenère.
+
+    El cifrado Vigenère utiliza una clave alfabética para aplicar
+    desplazamientos variables a cada letra del mensaje, aumentando
+    la seguridad frente al análisis de frecuencias simple.
+
+    :param mensaje: texto que se desea cifrar
+    :param clave: palabra clave alfabética utilizada para el cifrado
+    :return: mensaje cifrado
+    """
     mensaje_cifrado = ""
     len_clave = len(clave)
     for i in range(len(mensaje)):
@@ -15,6 +26,16 @@ def vigenere_cifrar(mensaje, clave):
     return mensaje_cifrado
 
 def vigenere_descifrar(mensaje, clave):
+    """
+    Descifra un mensaje cifrado con el Cifrado Vigenère.
+
+    Aplica los desplazamientos inversos definidos por la clave para
+    recuperar el mensaje original.
+
+    :param mensaje: texto cifrado que se desea descifrar
+    :param clave: palabra clave alfabética utilizada en el cifrado
+    :return: mensaje descifrado
+    """
     mensaje_descifrado = ""
     len_clave = len(clave)
     for i in range(len(mensaje)):

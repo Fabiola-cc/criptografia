@@ -14,7 +14,17 @@ frecuencia_en = {
 
 from collections import Counter
 
-def frecuencias(mensaje):
+def analisis_frecuencia(mensaje):
+    """
+    Realiza un análisis de frecuencias sobre un mensaje.
+
+    El análisis de frecuencias no rompe automáticamente el cifrado,
+    sino que proporciona información estadística que puede ayudar
+    a romper cifrados por sustitución simple, como el Cifrado César.
+
+    :param mensaje: mensaje que se desea analizar
+    :return: diccionario con la frecuencia relativa de cada letra
+    """
     letras = [c for c in mensaje.lower() if 'a' <= c <= 'z']
     total = len(letras)
 
@@ -40,7 +50,7 @@ print("Mensaje original:")
 print(mensaje)
 print()
 
-freq = frecuencias(mensaje)
+freq = analisis_frecuencia(mensaje)
 
 print("Frecuencias encontradas (ordenadas):")
 for letra, valor in ordenar_frecuencia(freq):
